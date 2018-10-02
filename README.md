@@ -1,4 +1,4 @@
-# fundmgr
+# Fund Manager
 
 
 
