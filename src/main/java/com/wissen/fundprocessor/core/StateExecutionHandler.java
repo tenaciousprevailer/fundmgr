@@ -13,10 +13,10 @@ public class StateExecutionHandler implements IStateExecutionHandler{
 	private static final Logger logger = LogManager.getLogger(StateExecutionHandler.class.getName());
 	
 	public boolean execute(StateDetail stateDetail, Context context) {
-		logger.info("Going to execute task:{}", stateDetail);
+		logger.debug("Going to execute task:{}", stateDetail);
 		FundProcessingState fundProcessingState = stateDetail.getFundProcessingState();
 		IFundStateProcessor processor = FundProcessorFactory.getInstance().getFundProcessor(fundProcessingState);
-		logger.info("Fund Processor:{}", processor);
+		logger.debug("Fund Processor:{}", processor);
 		return processor.process(context);
 	}
 

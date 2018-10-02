@@ -12,10 +12,10 @@ public class StateExecutor implements IStateExecutionHandler{
 	private static final Logger logger = LogManager.getLogger(StateExecutor.class.getName());
 	
 	public boolean execute(StateDetail stateDetail, Context context) {
-		logger.info("Going to execute task:{}", stateDetail);
+		logger.debug("Going to execute task:{}", stateDetail);
 		StateExecutionType executionType = stateDetail.getExecutionType();
 		IStateExecutionHandler executionHandler = StateExecutorFactory.getExecutionHandler(executionType);
-		logger.info("Execution handler:{}", executionHandler);
+		logger.debug("Execution handler:{}", executionHandler);
 		return executionHandler.execute(stateDetail,context);
 	}
 }

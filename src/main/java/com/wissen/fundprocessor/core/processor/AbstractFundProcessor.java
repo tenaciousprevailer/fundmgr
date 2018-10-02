@@ -10,9 +10,10 @@ public abstract class AbstractFundProcessor implements IFundStateProcessor {
 
 	protected final Logger logger = LogManager.getLogger(this.getClass().getName());
 	
+	// default implementation
 	@Override
 	public boolean process(Context context) {
-		logger.info("approved");
+		logger.info("APPROVED by:" + this.getClass().getSimpleName());
 		return true;
 	}
 

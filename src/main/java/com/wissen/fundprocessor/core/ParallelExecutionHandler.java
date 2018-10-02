@@ -21,7 +21,7 @@ public class ParallelExecutionHandler implements IStateExecutionHandler{
 	private static final Logger logger = LogManager.getLogger(ParallelExecutionHandler.class.getName());
 
 	public boolean execute(StateDetail stateDetail, Context context) {
-		logger.info("Going to execute task in parallel mode:{}", stateDetail);
+		logger.debug("Going to execute task in parallel mode:{}", stateDetail);
 		boolean isFundApproved = false;
 		ExecutorService executorService = Executors.newCachedThreadPool();
 		List<StateDetail> statesForParallelExecution = stateDetail.getStatesToExecute();
@@ -29,7 +29,7 @@ public class ParallelExecutionHandler implements IStateExecutionHandler{
 		Collection<Future<Boolean>> futureApprovalStatusList = new ArrayList<>();
 		for(StateDetail currentState : statesForParallelExecution) {
 			task = new FundProcessor(currentState, context);
-			logger.info("Going to submit task in parallel mode:{}", currentState);
+			logger.debug("Going to submit task in parallel mode:{}", currentState);
 			Future<Boolean> isFundApprovedFuture = executorService.submit(task);
 			futureApprovalStatusList.add(isFundApprovedFuture);
 		}

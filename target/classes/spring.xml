@@ -48,7 +48,11 @@
 	</bean>
 
 
-<!-- 	<bean id="traderFundRaiserState" class="com.wissen.fundprocessor.ent.StateDetail">
+
+<!-- 
+	========== SAMPLE CFG 1: Configuration to change the processing behavior on the run time
+	
+	<bean id="traderFundRaiserState" class="com.wissen.fundprocessor.ent.StateDetail">
 		<property name="executionType" value="EXECUTE_STATE"></property>
 		<property name="fundProcessingState" value="TRADER_RAISE_FUND"></property>
 		<property name="nextState" ref="researcherAndManagerApprovalState"></property>

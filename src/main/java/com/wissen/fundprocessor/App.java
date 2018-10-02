@@ -1,7 +1,7 @@
 package com.wissen.fundprocessor;
 
 import static com.wissen.fundprocessor.util.Constant.CONFG_FILE_NAME;
-import static com.wissen.fundprocessor.util.Constant.FIRST_PROCESSING_STATE;
+import static com.wissen.fundprocessor.util.Constant.FIRST_PROCESSING_STATE_NAME;
 import static com.wissen.fundprocessor.util.Util.closeResource;
 
 import org.apache.logging.log4j.LogManager;
@@ -26,9 +26,12 @@ public class App {
 			applicationContext = new ClassPathXmlApplicationContext(CONFG_FILE_NAME);
 			applicationContext.registerShutdownHook();
 
-			StateDetail firstStateDetail = applicationContext.getBean(FIRST_PROCESSING_STATE, StateDetail.class);
-			logger.info("State Detail:{}", firstStateDetail);
+			StateDetail firstStateDetail = applicationContext.getBean(FIRST_PROCESSING_STATE_NAME, StateDetail.class);
+			logger.debug("State Detail:{}", firstStateDetail);
 			
+			// context which holds the details about the fund, that needs to get approved.
+			// along with some common data required by approvers
+			// Currently it is empty, and has to be updated as per business needs.
 			Context context = new Context();
 			
 			IStateExecutionHandler controller = FundStateController.getInstance();

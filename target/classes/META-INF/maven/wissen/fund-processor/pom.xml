@@ -29,9 +29,6 @@
 			<version>2.11.1</version>
 		</dependency>
 
-		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-core</artifactId> 
-			<version>5.1.0.RELEASE</version> </dependency> <dependency> <groupId>org.springframework</groupId> 
-			<artifactId>spring-beans</artifactId> <version>5.1.0.RELEASE</version> </dependency> -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -49,7 +46,7 @@
 				<version>3.2</version>
 				<configuration>
 					<verbose>true</verbose>
-					<source>1.8</source> <!-- QUESTION : WHAT IS 1.8 HERE? -->
+					<source>1.8</source>
 					<target>1.8</target>
 					<showWarnings>true</showWarnings>
 				</configuration>
