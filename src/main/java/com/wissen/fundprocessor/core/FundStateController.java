@@ -22,7 +22,7 @@ public class FundStateController implements IStateExecutionHandler{
 	}
 	
 	@Override
-	public boolean execute(StateDetail stateDetail, Context context) {
+	public boolean execute(final StateDetail stateDetail, final Context context) {
 
 		logger.debug("Going to process for the fund approval");
 		boolean isFundApproved = false;

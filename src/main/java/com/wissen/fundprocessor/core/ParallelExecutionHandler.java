@@ -20,7 +20,7 @@ import com.wissen.fundprocessor.pres.IStateExecutionHandler;
 public class ParallelExecutionHandler implements IStateExecutionHandler{
 	private static final Logger logger = LogManager.getLogger(ParallelExecutionHandler.class.getName());
 
-	public boolean execute(StateDetail stateDetail, Context context) {
+	public boolean execute(final StateDetail stateDetail, final Context context) {
 		logger.debug("Going to execute task in parallel mode:{}", stateDetail);
 		boolean isFundApproved = false;
 		ExecutorService executorService = Executors.newCachedThreadPool();

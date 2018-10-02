@@ -12,7 +12,7 @@ import com.wissen.fundprocessor.pres.IFundStateProcessor;
 
 public class FundProcessorFactory {
 
-	private HashMap<FundProcessingState, IFundStateProcessor> fundProcessorsMap;
+	private final HashMap<FundProcessingState, IFundStateProcessor> fundProcessorsMap;
 	
 	private FundProcessorFactory() {
 		// initialize
@@ -32,7 +32,7 @@ public class FundProcessorFactory {
 		private static final FundProcessorFactory INSTANCE = new FundProcessorFactory();
 	}
 	
-	public IFundStateProcessor getFundProcessor(FundProcessingState fundProcessState) {
+	public IFundStateProcessor getFundProcessor(final FundProcessingState fundProcessState) {
 		return fundProcessorsMap.get(fundProcessState);
 	}
 

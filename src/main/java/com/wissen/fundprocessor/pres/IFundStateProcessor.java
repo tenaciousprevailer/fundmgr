@@ -17,6 +17,6 @@ public interface IFundStateProcessor {
 	 * @param context
 	 * @return true if fund is approved
 	 */
-	public boolean process(Context context);
+	public boolean process(final Context context);
 	
 }

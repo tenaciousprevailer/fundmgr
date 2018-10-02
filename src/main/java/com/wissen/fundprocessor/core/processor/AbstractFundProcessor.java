@@ -12,7 +12,7 @@ public abstract class AbstractFundProcessor implements IFundStateProcessor {
 	
 	// default implementation
 	@Override
-	public boolean process(Context context) {
+	public boolean process(final Context context) {
 		logger.info("APPROVED by:" + this.getClass().getSimpleName());
 		return true;
 	}

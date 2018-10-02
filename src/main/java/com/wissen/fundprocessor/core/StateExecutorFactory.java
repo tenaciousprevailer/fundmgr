@@ -9,7 +9,7 @@ public class StateExecutorFactory {
 
 	private StateExecutorFactory() {}
 	
-	private static HashMap<StateExecutionType, IStateExecutionHandler> stateHandlerMap;
+	private static final HashMap<StateExecutionType, IStateExecutionHandler> stateHandlerMap;
 	
 	static {
 		stateHandlerMap = new HashMap<>();

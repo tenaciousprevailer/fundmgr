@@ -7,6 +7,10 @@ public class Util {
 
 	private Util() {}
 	
+	/**
+	 * api to close all Closeable
+	 * @param resource
+	 */
     public static void closeResource(Closeable resource) {
     	if(resource != null) {
     		try {

@@ -5,6 +5,6 @@ import com.wissen.fundprocessor.ent.StateDetail;
 
 public interface IStateExecutionHandler {
 
-	public boolean execute(StateDetail stateDetail, Context context);
+	public boolean execute(final StateDetail stateDetail, final Context context);
 	
 }
